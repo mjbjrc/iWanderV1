@@ -1,0 +1,184 @@
+
+
+.link {
+  font-family: "Poppins";
+  color: black;
+}
+
+.link-h{
+  font-family: "Poppins";
+  color: white;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: black;
+}
+
+.create-button{
+  font-family: "Poppins";
+  font-weight: 600;
+  color: black;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 15px;
+  border-radius: 40px;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  background-color: white;
+}
+
+.block{
+  /* background-color: pink; */
+  text-align: center;
+}
+
+.imgblock {
+          background-image:url('/images/bg.jpeg');
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size:cover;
+          height: 100vh;
+
+
+          /* Workaround for some mobile browsers */
+          min-height:100%;
+          /* padding-top: 20px; */
+          /* padding-bottom: 20px; */
+}
+
+.n{
+  position: -50px;
+}
+
+.transparent{
+  background-color: transparent;
+}
+
+.home-text{
+  font-family: "Poppins";
+  text-align: center;
+  font-size: 3vw;
+  /* font-size: 25px; */
+  color: white;
+  width: 500px;
+  padding-top: 50px;
+  letter-spacing: 3px;
+  margin-top: 200px;
+}
+
+.h2-text{
+  font-family: "Poppins";
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+
+.sign-in{
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+}
+
+.buttons{
+  font-family: "Poppins";
+  color: white;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 15px;
+  border-radius: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+}
+
+/* .filter-box{
+  background-color: pink;
+  float:left;
+}
+
+.sort-box{
+  background-color: red;
+  height: 20px;
+}
+
+.result-box{
+  float: right;
+} */
+
+
+
+
+.site-name{
+  color: black;
+}
+
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 600px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
