@@ -22,14 +22,24 @@ class UsersTableSeeder extends Seeder
         $role_admin = Role::where('name','admin')->first();
         $role_user = Role::where('name','user')->first();
 
+          /*** ADMIN  ***/
         $admin = new User();
         $admin->name = 'Maeriel B';
-        $admin->email = 'admin@travelsite.ie';
+        $admin->email = 'adminmaeriel@travelsite.ie';
         $admin->password = bcrypt('secret');
         $admin->save();
 
         $admin->roles()->attach($role_admin);
 
+        $admin = new User();
+        $admin->name = 'Jurizza C';
+        $admin->email = 'adminjurizza@travelsite.ie';
+        $admin->password = bcrypt('secret');
+        $admin->save();
+
+        $admin->roles()->attach($role_admin);
+
+        /*** TEST USER ***/
         $user = new User();
         $user->name = 'Karen C';
         $user->email = 'kc@travelsite.ie';

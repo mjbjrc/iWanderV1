@@ -55,7 +55,7 @@
 </template>
 <script>
 export default{
-  name: "modal",
+  name: "addEvent",
   props: ['app','data','itinerary_id'],
   components:{
 

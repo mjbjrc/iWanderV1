@@ -25,12 +25,16 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <!-- Linear Icons JS -->
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
 </head>
 
 <body>
     <div id="app">
 
     </div>
+
 </body>
 
 </html>

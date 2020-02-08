@@ -32,11 +32,10 @@ class ItineraryController extends Controller
       return response()->json(['message' => 'Created an itinerary', 'data' => $itinerary], 200);
     }
 
+    //view All Itineraries of the user
     public function view(){
       $itinerariesAttributes = Itinerary::where('user_id', auth()->user()->id)->get();
       $itineraries = $itinerariesAttributes->toArray();
-      // dd($itineraries);
-
 
       if ($itineraries === null) {
         $statusMsg = 'Itineraries not found!';
@@ -46,6 +45,24 @@ class ItineraryController extends Controller
         return response()->json(
           [
               'data' => $itineraries
+          ],
+          200);
+      }
+    }
+
+    //get last entry itinerary
+    public function getItinerary(){
+      $itineraryAttributes = Itinerary::where('user_id', auth()->user()->id)->latest('created_at')->first();
+      $itinerary = $itineraryAttributes->toArray();
+
+      if ($itinerary === null) {
+        $statusMsg = 'Itinerary not found!';
+        $statusCode = 404;
+      }
+      else {
+        return response()->json(
+          [
+              'data' => $itinerary
           ],
           200);
       }

@@ -1,21 +1,22 @@
 <template>
   <div>
-    <navbar :app="this"></navbar>
+    <navbar :app="this" v-if="!$route.meta.hideNavigation"></navbar>
 
     <!-- <spinner v-if="loading"></spinner> -->
     <!-- <div v-else-if="initiated"> -->
       <router-view> </router-view>
-
+    <footerbar :app="this" v-if="!$route.meta.hideNavigation"></footerbar>
     <!-- </div> -->
   </div>
 </template>
 
 <script>
 import navbar from './components/navbar'
+import footerbar from './components/footerbar'
   export default{
     name: 'app',
     components: {
-      navbar
+      navbar, footerbar
     },
     data(){
       return{

@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid ">
+<div class="container-fluid">
   <nav class="navbar navbar-expand-md navbar-custom navbar-default p-0 mt-3">
     <div class="container-fluid nav-img p-2">
       <!-- <a class="navbar-brand link" href="#">iWander</a> -->
@@ -18,10 +18,10 @@
         <ul class="navbar-nav ml-auto">
           <autocomplete> </autocomplete>
           <li class="nav-item">
-            <router-link to="/home" class="nav-link link">Browse</router-link>
+            <router-link to="/itinerariesIndex" class="nav-link link">Browse</router-link>
           </li>
           <li class="nav-item">
-              <router-link to="/login" class="nav-link link">How To</router-link>
+              <router-link to="/howto" class="nav-link link">How To</router-link>
           </li>
           <li class="nav-item" >
               <router-link v-on:logged="checkIfLoggedIn" to="/login" class="nav-link link" v-if="isLoggedin === false">Sign In</router-link>
@@ -38,9 +38,7 @@
                   <router-link to="/my-profile" class="dropdown-item">My Profile</router-link>
                   <router-link to="/home" class="dropdown-item">Settings</router-link>
             </div>
-
           </li>
-
           <li class="nav-item">
             <a class="nav-link link" @click="logout" v-if="isLoggedin === true">
                 Logout
@@ -90,7 +88,8 @@ import autocomplete from './autocomplete'
         .catch(function(error){
           console.log(error);
         });
-        this.$router.replace({name: 'register'});
+        this.$router.replace({name: 'home'});
+        window.location.reload();
         console.log("USER LOGGED OUT");
         localStorage.removeItem('token');
       },

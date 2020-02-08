@@ -8,7 +8,8 @@ import restaurant from './views/restaurant';
 import myprofile from './views/myprofile';
 import addtoitinerary from './views/addtoitinerary';
 import saveItinerary from './views/saveItinerary';
-
+import itinerariesIndex from './views/itinerariesIndex';
+import howto from './views/howto';
 
 
 export default[
@@ -30,14 +31,9 @@ export default[
   {
     path: '/createItinerary',
     component: createItinerary,
-    name: 'createItinerary'
+    name: 'createItinerary',
+    meta: { hideNavigation: true }
   },
-  // {
-  //   path: '/search/',
-  //   component: cities,
-  //   name: 'cities',
-  //   props: true
-  // },
   {
     path: '/search/:city',
     component: searchIndex,
@@ -45,7 +41,7 @@ export default[
     props: true
   },
   {
-    path: '/restaurant/',
+    path: '/restaurant/:res_id',
     component: restaurant,
     name: 'restaurant',
     props: true
@@ -57,15 +53,31 @@ export default[
     props: true
   },
   {
-    path: '/add-to-itinerary/',
+    path: '/add-to-itinerary/:destination',
     component: addtoitinerary,
     name: 'addtoitinerary',
+    props: true,
+    meta: { hideNavigation: true }
+  },
+  {
+    path: '/save-itinerary/:itinerary_id/',
+    component: saveItinerary,
+    name: 'saveItinerary',
+    props: true,
+    meta: { hideNavigation: true }
+  },
+  {
+    path: '/itinerariesIndex',
+    component: itinerariesIndex,
+    name: 'itinerariesIndex',
     props: true
   },
   {
-    path: '/save-itinerary/',
-    component: saveItinerary,
-    name: 'saveItinerary',
+    path: '/howto',
+    component: howto,
+    name: 'howto',
     props: true
   }
+
+
 ]

@@ -27,6 +27,8 @@ Route::post('bookmarks', 'API\ProfileController@bookmarks');
 Route::post('createitinerary', 'API\ItineraryController@create');
 Route::post('addtoitinerary', 'API\EventController@create');
 // Route::get('viewbookmarks', 'API\ProfileController@viewBookmarks');
+// Route::get('/profile','API\ProfileController@index');
+Route::put('/profile','API\ProfileController@update');
 
 //autocomplete
 Route::get('autocomplete', 'API\CountryController@autocomplete');
@@ -39,7 +41,7 @@ Route::middleware('auth:api')->group(function () {
   Route::get('logout', 'API\PassportController@logout');
   Route::get('countries', 'API\CountryController@index');
   Route::get('viewbookmarks', 'API\ProfileController@viewBookmarks');
-  Route::get('viewItinerary', 'API\ItineraryController@view');
+  Route::get('viewItineraries', 'API\ItineraryController@view');
   Route::get('viewEvents', 'API\EventController@view');
-
+  Route::get('getItinerary', 'API\ItineraryController@getItinerary');
 });

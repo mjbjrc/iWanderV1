@@ -80,6 +80,7 @@
           localStorage.setItem("token", response.data.token);
           //go to home
           app.$router.replace({name: 'home'});
+          window.location.reload();
         })
         .catch(function(error){
           console.log(error);

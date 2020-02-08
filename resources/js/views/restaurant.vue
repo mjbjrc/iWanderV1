@@ -2,15 +2,12 @@
   <div>
     <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-12">
-            <div class="col-lg-6 m-0">
-                <h2>{{ results.location.city }}</h2>
+          <div class="col-12 col-lg-4 main-heading">
+              <h6 class="subheading mt-5">{{ results.location.city }}</h6>
               <h1>{{results.name}}</h1>
-              <!-- <img class="h-100 w-100 float-right" :src="results.featured_image" /> -->
-            </div>
-            <div class="col-lg-6 float-right">
-              <img class="h-100 w-100 float-right" :src="results.featured_image" />
-            </div>
+          </div>
+          <div class="col-12 col-lg-7 offset-lg-1 item-image">
+              <img :src="results.featured_image" class="mt-5"/>
           </div>
           <div class="col-lg-12">
             <hr/>
@@ -86,17 +83,16 @@ function getRestaurant(res_id){
 export default{
   name: 'restaurant',
   components: {},
-  props: ['app','query'],
+  props: ['app','res_id'],
   data(){
     return{
       results: [],
-      user_id: "",
-      restaurant_id: ''
+      user_id: ""
+      // restaurant_id: this.$route.params.res_id,
     }
   },
   mounted(){
-    this.viewRestaurant(this.query);
-    // console.log(this.query);
+    this.viewRestaurant(this.$route.params.res_id);
   },
   methods: {
     viewRestaurant(query){
@@ -117,8 +113,9 @@ export default{
         headers: { Authorization: "Bearer " + token }
       })
       .then(response => {
-        app.user_id = response.data.user.id
-        app.restaurant_id = results.id
+        app.user_id = response.data.user.id;
+        // app.restaurant_id = results.id
+        // app.restaurant_id =
         //call addToBookmarks method
         this.addToBookmarks();
       })
@@ -131,7 +128,7 @@ export default{
       let token = localStorage.getItem("token");
       axios.post('/api/bookmarks', {
         user_id: app.user_id,
-        restaurant_id: app.restaurant_id
+        restaurant_id: this.$route.params.res_id
       })
       .then(response => {
         console.log("SUCCESS");
